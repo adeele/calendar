@@ -1,0 +1,29 @@
+.calendar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar__row {
+    display: flex;
+    flex-grow: 1;
+}
+
+.calendar__tile {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0,0,0, 0.2);
+    border-radius: 2px;
+    margin: 1px;
+}
+
+.calendar__button {
+    background-color: #CBE5E5;
+}
+
+.calendar__label {
+    background-color: #CBCBE8;
+}
