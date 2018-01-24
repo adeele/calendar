@@ -7,11 +7,9 @@
 
 .calendar__row {
     display: flex;
-    flex-grow: 1;
 }
 
 .calendar__tile {
-    flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,4 +24,27 @@
 
 .calendar__label {
     background-color: #CBCBE8;
+    text-align: center;
+}
+
+.calendar__row:first-child,
+.calendar__row:last-child {
+    height: 40px;
+}
+
+.calendar__row:not(:first-child):not(:last-child) {
+    flex: 1 1 0;
+}
+
+.calendar__tile:first-child,
+.calendar__tile:last-child {
+    width: 50px;
+}
+
+.calendar__tile:not(:first-child):not(:last-child) {
+    flex: 1 1 0;
+}
+
+.calendar__day {
+    border-color: #000;
 }

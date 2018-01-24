@@ -3,16 +3,20 @@ import classNames from 'classnames';
 
 class Tile extends Component {
     render() {
-        const { type, content } = this.props;
+        const { type, content, onClick } = this.props;
 
         return(
-            <div className={
-                classNames('calendar__tile', {
-                    'calendar__button': type === 'button',
-                    'calendar__label': type === 'label'
-                })
-            }>
-                {content}
+            <div className={classNames(`calendar__tile calendar__${type}`, { 'day': type === 'day' })}
+                onClick={() => onClick()}>
+                {
+                    type === 'day' ?
+                        (
+                            <div className="day__title">
+                                {content}
+                            </div>
+                        ) :
+                        content
+                }
             </div>
         );
     }

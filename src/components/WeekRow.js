@@ -3,17 +3,20 @@ import Tile from "./Tile";
 
 class WeekRow extends Component {
     render() {
+        const { date } = this.props;
+        const monday = date.clone().startOf('isoWeek');
+
         return (
-                <div className="calendar__row calendar__row--large">
-                    <Tile type="label" content="W" />
-                    <Tile type="day" content="" />
-                    <Tile type="day" content="" />
-                    <Tile type="day" content="" />
-                    <Tile type="day" content="" />
-                    <Tile type="day" content="" />
-                    <Tile type="day" content="" />
-                    <Tile type="day" content="" />
-                    <Tile type="label" content="W" />
+                <div className="calendar__row">
+                    <Tile type="label" content={`W${date.week()} ${date.year()}`} />
+                    <Tile type="day" content={monday.format("MMMM DD")} />
+                    <Tile type="day" content={monday.add(1, 'days').format("MMMM DD")} />
+                    <Tile type="day" content={monday.add(1, 'days').format("MMMM DD")} />
+                    <Tile type="day" content={monday.add(1, 'days').format("MMMM DD")} />
+                    <Tile type="day" content={monday.add(1, 'days').format("MMMM DD")} />
+                    <Tile type="day" content={monday.add(1, 'days').format("MMMM DD")} />
+                    <Tile type="day" content={monday.add(1, 'days').format("MMMM DD")} />
+                    <Tile type="label" content={`W${date.week()} ${date.year()}`} />
                 </div>
             )
     }
