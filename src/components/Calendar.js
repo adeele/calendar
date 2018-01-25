@@ -20,13 +20,13 @@ class Calendar extends Component {
                 <WeekRow date={moment().add(weekOffset + 1, 'week')} />
                 <WeekRow date={moment().add(weekOffset + 2, 'week')} />
                 <WeekRow date={moment().add(weekOffset + 3, 'week')} />
-                <InfoRow content="next" onClick={(e) => this.setOffset(1)} />
+                <InfoRow content="next" onClick={() => this.setOffset(1)} />
             </div>
         );
     }
 
     setOffset = (offset) => {
-        this.setState({ weekOffset: this.state.weekOffset += offset});
+        this.setState({ weekOffset: this.state.weekOffset + offset});
     }
 }
 

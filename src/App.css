@@ -13,7 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid rgba(0,0,0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 2px;
     margin: 1px;
 }
@@ -64,4 +64,32 @@
 
 .day--today {
     background-color: antiquewhite;
+}
+
+.form {
+    width: 50%;
+    margin: 30px auto;
+}
+
+.form__title {
+    font-size: 24px;
+    text-align: center;
+    margin: 20px;
+}
+
+.form__row {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.form__input {
+    width: 50%;
+}
+
+.form__button {
+    background-color: #CBE5E5;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    margin: 1px;
 }
