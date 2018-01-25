@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import moment from 'moment';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import InfoRow from "./components/InfoRow";
-import WeekRow from "./components/WeekRow";
+import Calendar from './components/Calendar';
+import Event from './components/Event';
 
 import './App.css';
 
@@ -13,22 +13,14 @@ class App extends Component {
     }
 
     render() {
-        const { weekOffset } = this.state;
-
-        return(
-            <div className="calendar">
-                <InfoRow content="prev" onClick={(e) => this.setOffset(-1)} />
-                <WeekRow date={moment().add(weekOffset, 'week')} />
-                <WeekRow date={moment().add(weekOffset + 1, 'week')} />
-                <WeekRow date={moment().add(weekOffset + 2, 'week')} />
-                <WeekRow date={moment().add(weekOffset + 3, 'week')} />
-                <InfoRow content="next" onClick={(e) => this.setOffset(1)} />
-            </div>
+        return (
+            <Router>
+                <div className="app">
+                    <Route exact path="/" component={Calendar} />
+                    <Route path="/event" component={Event} />
+                </div>
+            </Router>
         );
-    }
-
-    setOffset = (offset) => {
-        this.setState({ weekOffset: this.state.weekOffset += offset});
     }
 }
 

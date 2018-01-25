@@ -47,4 +47,21 @@
 
 .calendar__day {
     border-color: #000;
+    font-size: 11px;
+}
+
+.day {
+    display: flex;
+}
+
+.day__title {
+    border: 1px solid #000;
+    border-radius: 2px;
+    width: 100%;
+    line-height: 16px;
+    padding: 0 2px;
+}
+
+.day--today {
+    background-color: antiquewhite;
 }

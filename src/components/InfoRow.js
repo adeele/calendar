@@ -15,7 +15,7 @@ class InfoRow extends Component {
                     <Tile type="label" content="Friday" />
                     <Tile type="label" content="Saturday" />
                     <Tile type="label" content="Sunday" />
-                    <Tile type="button" content={content} />
+                    <Tile type="button" content={content} onClick={() => onClick()} />
                 </div>
             )
     }

@@ -1,25 +1,34 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom'
 import classNames from 'classnames';
 
 class Tile extends Component {
     render() {
-        const { type, content, onClick } = this.props;
+        const { type, content, isToday, onClick } = this.props;
+        const classes = ['calendar__tile calendar__day', { 'day': type === 'day', 'day--today' : isToday }];
 
-        return(
-            <div className={classNames(`calendar__tile calendar__${type}`, { 'day': type === 'day' })}
-                onClick={() => onClick()}>
-                {
-                    type === 'day' ?
-                        (
-                            <div className="day__title">
-                                {content}
-                            </div>
-                        ) :
-                        content
-                }
-            </div>
+        return (
+            type === 'day' ?
+                (
+                    <div className={classNames(classes)} onClick={() => this.dayHandler()}>
+                        <div className="day__title">
+                            {content}
+                        </div>
+                        <div className="day__events">
+                        </div>
+                    </div>
+
+                ) : (
+                    <div className={`calendar__tile calendar__${type}`} onClick={onClick && (() => onClick())}>
+                        {content}
+                    </div>
+                )
         );
+    }
+
+    dayHandler = () => {
+        this.props.history.push('/event');
     }
 }
 
-export default Tile;
+export default withRouter(Tile);
