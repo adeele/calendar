@@ -7,7 +7,13 @@ import WeekRow from "./WeekRow";
 class Calendar extends Component {
     constructor(props) {
         super(props);
-        this.state = { weekOffset: 0 };
+        this.state = { weekOffset: 0, events: [] };
+    }
+
+    componentDidMount() {
+        fetch('/events')
+            .then(res => res.json())
+            .then(events => this.setState({events: events}));
     }
 
     render() {
@@ -16,10 +22,10 @@ class Calendar extends Component {
         return (
             <div className="calendar">
                 <InfoRow content="prev" onClick={(e) => this.setOffset(-1)} />
-                <WeekRow date={moment().add(weekOffset, 'week')} />
-                <WeekRow date={moment().add(weekOffset + 1, 'week')} />
-                <WeekRow date={moment().add(weekOffset + 2, 'week')} />
-                <WeekRow date={moment().add(weekOffset + 3, 'week')} />
+                <WeekRow date={moment().add(weekOffset, 'week')} events={this.state.events}/>
+                <WeekRow date={moment().add(weekOffset + 1, 'week')} events={this.state.events} />
+                <WeekRow date={moment().add(weekOffset + 2, 'week')} events={this.state.events} />
+                <WeekRow date={moment().add(weekOffset + 3, 'week')} events={this.state.events} />
                 <InfoRow content="next" onClick={() => this.setOffset(1)} />
             </div>
         );

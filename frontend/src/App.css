@@ -48,10 +48,13 @@
 .calendar__day {
     border-color: #000;
     font-size: 11px;
+    padding: 0 2px;
 }
 
 .day {
     display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .day__title {
@@ -60,10 +63,26 @@
     width: 100%;
     line-height: 16px;
     padding: 0 2px;
+    margin-top: -1px;
 }
 
 .day--today {
     background-color: antiquewhite;
+}
+
+.day__events {
+    display: flex;
+    flex-direction: column;
+    margin: 1px 0 1px -2px;
+    padding: 0 2px;
+    width: 100%;
+}
+
+.day__event {
+    border: 1px solid #008080;
+    border-radius: 2px;
+    color: #008080;
+    width: 100%;
 }
 
 .form {

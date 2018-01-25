@@ -4,7 +4,7 @@ import moment from 'moment';
 
 class WeekRow extends Component {
     render() {
-        const { date } = this.props;
+        const { date, events } = this.props;
         const monday = date.clone().startOf('isoWeek');
         const week = [
             monday,
@@ -16,24 +16,23 @@ class WeekRow extends Component {
             monday.clone().add(6, 'days'),
         ];
 
-        return (
-                <div className="calendar__row">
-                    <Tile type="label" content={`W${date.week()} ${date.year()}`} />
-                    {
-                        week.map((day, index) => {
-                            console.log(day, date, day.isSame(date, 'day'));
+        const filteredEvents = events.filter((event) => date.isSame(event.startDate, 'week'));
 
-                            return (
-                                <Tile type="day"
-                                      key={index}
-                                      content={day.format("MMMM DD")}
-                                      isToday={day.isSame(moment(), 'day')} />
-                            )
-                        })
-                    }
-                    <Tile type="label" content={`W${date.week()} ${date.year()}`} />
-                </div>
-            )
+        return (
+            <div className="calendar__row">
+                <Tile type="label" content={`W${date.week()} ${date.year()}`} />
+                {
+                    week.map((day, index) => (
+                        <Tile type="day"
+                              key={index}
+                              date={day}
+                              isToday={day.isSame(moment(), 'day')}
+                              events={filteredEvents} />
+                    ))
+                }
+                <Tile type="label" content={`W${date.week()} ${date.year()}`} />
+            </div>
+        )
     }
 }
 
