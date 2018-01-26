@@ -16,7 +16,7 @@ class WeekRow extends Component {
             monday.clone().add(6, 'days'),
         ];
 
-        const filteredEvents = events.filter((event) => date.isSame(event.startDate, 'week'));
+        const filteredEvents = events.filter((event) => date.isSame(event.date, 'week'));
 
         return (
             <div className="calendar__row">
