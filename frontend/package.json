@@ -16,6 +16,7 @@
     "hawk": "^7.0.7",
     "hoek": "^5.0.3",
     "js-yaml": "^3.13.1",
+    "kind-of": "^6.0.3",
     "lodash": "^4.17.14",
     "lodash.template": "^4.5.0",
     "macaddress": "^0.2.9",
@@ -39,7 +40,7 @@
     "sntp": "^3.0.1",
     "stringstream": "^1.0.0",
     "url-parse": "^1.4.3",
-    "webpack-dev-server": "^3.1.14"
+    "webpack-dev-server": "^3.11.0"
   },
   "scripts": {
     "start": "react-scripts start",
