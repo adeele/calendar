@@ -16,7 +16,7 @@
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "kind-of": "^6.0.3",
-    "lodash": "^4.17.14",
+    "lodash": "^4.17.19",
     "mime": "^1.4.1",
     "moment": "^2.20.1",
     "mongodb": "^3.5.5",
