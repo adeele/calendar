@@ -23,7 +23,7 @@
     "lodash.template": "^4.5.0",
     "macaddress": "^0.2.9",
     "mem": "^5.1.1",
-    "merge": "^1.2.1",
+    "merge": "^2.1.1",
     "mime": "^1.4.1",
     "mixin-deep": "^2.0.1",
     "moment": "^2.20.1",
