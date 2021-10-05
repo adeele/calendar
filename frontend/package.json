@@ -42,7 +42,7 @@
     "sntp": "^3.0.1",
     "stringstream": "^1.0.0",
     "typescript": "^4.0.2",
-    "url-parse": "^1.4.3",
+    "url-parse": "^1.5.2",
     "webpack-dev-server": "^3.11.0"
   },
   "scripts": {
